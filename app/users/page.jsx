@@ -1,3 +1,6 @@
+import UserList from "@/components/UserList";
+import { Image } from "next/image";
+
 async function fetchUsers() {
   const res = await fetch("https://reqres.in/api/users");
   const data = await res.json();
@@ -6,14 +9,13 @@ async function fetchUsers() {
 }
 
 
+
 export default async function Users() {
   const users = await fetchUsers();
   return (
     <>
       <div>user page</div>
-      <div>
-        {JSON.stringify(users) }
-      </div>
+      <UserList users={users} />
     </>
   )
 }
