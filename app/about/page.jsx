@@ -1,11 +1,12 @@
+
 "use client"
 
-import { useState } from 'react'
-
-
+import { useContext } from "react"
+import { TasksContext } from "@/context/TasksContext"
 
 export default function AboutPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const values = useContext(TasksContext)
+  console.log(values)
 
   return (
     <div className="bg-white">
